@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1601322997 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arrayEmployees.h"
+	"biblioteca.h"
+
+1601324433 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp2\arrayemployees.c
+	"ArrayEmployees.h"
+	"biblioteca.h"
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<limits.h>
+
+1601322813 c:\users\santi\desktop\facultad\02-2020\programacion\tp2\arrayemployees.h
+
+1601234720 c:\users\santi\desktop\facultad\02-2020\programacion\tp2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+
+1601320066 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp2\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1601320003 c:\users\santi\desktop\facultad\02-2020\programacion\tp2\biblioteca.h
+

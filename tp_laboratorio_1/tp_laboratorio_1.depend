@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1567804079 source:c:\users\santiago\desktop\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1567382646 source:c:\users\santiago\desktop\tp_laboratorio_1\biblioteca.c
+
+1567803890 c:\users\santiago\desktop\tp_laboratorio_1\biblioteca.h
+
+1570243169 source:c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_1\biblioteca.c
+
+1570243169 source:c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1570243169 c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_1\biblioteca.h
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_1\biblioteca.c
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1599659734 c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_1\biblioteca.h
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_1\biblioteca.c
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1599659734 c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_1\biblioteca.h
+

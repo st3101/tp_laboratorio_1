@@ -16,7 +16,10 @@ int initEmployees(eEmployee list[], int len);
 int addEmployees(eEmployee list[],int len);
 void printAnEmployees(eEmployee list);
 int printfEmployees(eEmployee list[],int len);
-
-
+int findEmployeeById(eEmployee list[], int len,int id);
+void modifyEmployee(eEmployee list[],int len);
+int removeEmployee(eEmployee list[], int len);
+int sortEmployees(eEmployee list[], int len);
+void average_employees(eEmployee list[],int len);
 #endif // ARRAYEMPLOYEES_H_INCLUDED
 

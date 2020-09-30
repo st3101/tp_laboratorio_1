@@ -26,3 +26,26 @@
 
 1601320003 c:\users\santi\desktop\facultad\02-2020\programacion\tp2\biblioteca.h
 
+1601508098 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	"biblioteca.h"
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<limits.h>
+
+1601508002 c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio_2\arrayemployees.h
+
+1601320003 c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio_2\biblioteca.h
+
+1601320066 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio_2\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1601508482 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arrayEmployees.h"
+	"biblioteca.h"
+

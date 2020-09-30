@@ -6,18 +6,16 @@
 #include <stdlib.h>
 #include "arrayEmployees.h"
 #include "biblioteca.h"
-#define NUMBER_EMPLOYEES 1000
-
+#define NUMBER_EMPLOYEES 10
 
 
 int main()
 {
-    eEmployee anEmployee[NUMBER_EMPLOYEES];
-    initEmployees(anEmployee,NUMBER_EMPLOYEES);
+    eEmployee arrayEmployee[NUMBER_EMPLOYEES];
+    initEmployees(arrayEmployee,NUMBER_EMPLOYEES);
 
     int opcion;
     int flag=0;
-
 
     do
     {
@@ -26,12 +24,20 @@ int main()
         switch(opcion)
         {
         case 1:
-            flag=addEmployees(anEmployee,NUMBER_EMPLOYEES);
+            if(addEmployees(arrayEmployee,NUMBER_EMPLOYEES))
+            {
+                flag=1;
+            }
+            else
+            {
+                printf("\nNo hay mas espacio\n\n");
+            }
+
             break;
         case 2:
             if(flag==1)
             {
-
+                modifyEmployee(arrayEmployee,NUMBER_EMPLOYEES);
             }
             else
             {
@@ -41,7 +47,7 @@ int main()
         case 3:
             if(flag==1)
             {
-
+                removeEmployee(arrayEmployee,NUMBER_EMPLOYEES);
             }
             else
             {
@@ -51,7 +57,10 @@ int main()
         case 4:
             if(flag==1)
             {
-                printfEmployees(anEmployee,NUMBER_EMPLOYEES);
+
+                sortEmployees(arrayEmployee,NUMBER_EMPLOYEES);
+                printfEmployees(arrayEmployee,NUMBER_EMPLOYEES);
+                average_employees(arrayEmployee,NUMBER_EMPLOYEES);
             }
 
             else
@@ -61,7 +70,8 @@ int main()
             break;
         default:
             printf("\nOpcion Invalida!\n\n");
-        }
+            }
+
 
         system("pause");
         system("cls");

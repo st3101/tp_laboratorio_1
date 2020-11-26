@@ -1,0 +1,85 @@
+# depslib dependency file v1.0
+1570242539 source:c:\users\santiago\desktop\tp2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570242539 c:\users\santiago\desktop\tp2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1570242989 source:c:\users\santiago\desktop\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1570242539 source:c:\users\santiago\desktop\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570242539 c:\users\santiago\desktop\tp_laboratorio_2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1570242989 source:c:\users\santiago\desktop\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1570243169 source:c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1570243169 c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1570243169 source:c:\users\santi\desktop\tp_laboratorio_1-master\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1589667102 source:c:\users\santi\desktop\faculta\programacion - laboratorio\tps\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1589667102 c:\users\santi\desktop\faculta\programacion - laboratorio\tps\tp_laboratorio_2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1589636348 source:c:\users\santi\desktop\faculta\programacion - laboratorio\tps\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1599659734 c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\tp_laboratorio_1\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_2\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1599659734 c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_2\arrayemployees.h
+	"ArrayEmployees.h"
+
+1599659734 source:c:\users\santi\desktop\facultad\02-2020\programacion\tp_laboratorio\tp_laboratorio_2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+

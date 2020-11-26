@@ -1,190 +1,286 @@
 #include "ArrayEmployees.h"
-#include "biblioteca.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
-#include <limits.h>
-
-int initEmployees(eEmployee list[], int len)
+#include <string.h>
+int initEmployees(eEmployee array[],int limite)
 {
     int i;
-    for(i=0;i<len;i++)
-    {
-        list[i].isEmpty=0;
-    }
 
+
+      for(i=0;i<limite;i++)
+    {
+        array[i].isEmpty=-1;
+    }
     return 0;
 }
-
-int addEmployees(eEmployee list[],int len)
+int addEmployees(eEmployee array[],int limite)
 {
     int i;
-    int retorno=0;
+    float auxSa;
+    int auxSe;
+    int funciono;
 
-    for(i=0;i<len;i++)
+    for(i=0;i<limite;i++)
     {
-        if(list[i].isEmpty==0)
+        if(array[i].isEmpty==-1)
         {
-            getString(list[i].name,"Ingrese un nombre: ");
-            getString(list[i].lastName,"Ingrese un apellido: ");
-            list[i].salary=getFloat(0,INT_MAX,"Ingrese el sueldo: ");
-            list[i].sector=getInt(0,INT_MAX,"Ingrese el sector (numeros): ");
-            list[i].id=i+1000;
-            list[i].isEmpty=1;
+            printf("Ingrese el nombre: ");
+            gets(array[i].name);
+            funciono=esSoloLetras(array[i].name);
+            while(funciono==0)
+            {
+                printf("Error ingrese solo letras, Ingrese el nombre: ");
+                gets(array[i].name);
+                funciono=esSoloLetras(array[i].name);
+            }
 
-            retorno=1;
-            break;
-        }
-
-    }
-
-    return retorno;
-}
-
-void printAnEmployees(eEmployee list)
-{
-    printf("%15d%15d%15.2f%15s%14s\n",list.id,list.sector,list.salary,list.name,list.lastName);
-}
-int printfEmployees(eEmployee list[],int len)
-{
-    int i;
-    int retorno=0;
-
-    printf("\n%15s%15s%15s%15s%15s","ID","SECTOR","SALARIO","NOMBRE","APELLIDO\n");
-
-    for(i=0;i<len;i++)
-    {
-        if(list[i].isEmpty==1)
-        {
-            printAnEmployees(list[i]);
-            retorno=1;
-        }
-    }
-
-    return retorno;
-}
-int findEmployeeById(eEmployee list[], int len,int id)
-{
-    int i;
-    int retorno=-1;
-
-    for(i=0;i<len;i++)
-    {
-        if(list[i].id==id)
-        {
-            retorno=i;
+            printf("Ingrese el apellido: ");
+            gets(array[i].lastName);
+            funciono=esSoloLetras(array[i].lastName);
+            while(funciono==0)
+            {
+                printf("Error ingrese solo letras, Ingrese el apellido: ");
+                gets(array[i].lastName);
+                funciono=esSoloLetras(array[i].lastName);
+            }
+            printf("Ingrese el salario: ");
+            scanf("%f",&auxSa);
+            printf("Ingrese el sector: ");
+            scanf("%d",&auxSe);
+            array[i].id=i;
+            array[i].salary=auxSa;
+            array[i].sector=auxSe;
+            array[i].isEmpty=1;
             break;
         }
     }
-
-    return retorno;
+    return 0;
 }
-void modifyEmployee(eEmployee list[],int len)
+int findEmployeeById(eEmployee array[],int limite,int*aux)
 {
-    int indice;
+    //agregar funcion mostrar
+    int i;
+    int parametro;
+
+
+    printf("Ingrese el ID: ");
+    scanf("%d",&parametro);
+
+    for(i=0;i<limite;i++)
+    {
+        if(array[i].id==parametro)
+        {
+            *aux = parametro;
+        }
+
+    }
+return 0;
+}
+
+int editEmplotee(eEmployee array[],int*aux)
+{
+
+
+    int i=*aux;
+    int auxInt;
+    float auxFloat;
     int opcion;
-    int i;
-
-    printfEmployees(list,len);
-
-    indice=getInt(1000,2001,"\nIngrese el ID que desea modificar: ");
-
-    while(findEmployeeById(list,len,indice)==-1)
-    {
-        indice=getInt(1000,2000,"\nError, ingrese un ID valido: ");
-    }
-
-    i=findEmployeeById(list,len,indice);
-
-    opcion=getInt(1,4,"\nQue desea modificar \n1)Nombre\n2)Apellido\n3)Salario\n4)Sector\n\nOPCION: ");
+    printf("Modificar\n1)Nombre\n2)Apellido\n3)Salario\n4)Sector\n\nOpcion: ");
+    fflush(stdin);
+    scanf("%d",&opcion);
+    fflush(stdin);
 
     switch(opcion)
     {
-        case 1:
-            getString(list[i].name,"Ingrese el nuevo nombre: ");
-            break;
-        case 2:
-            getString(list[i].lastName,"Ingrese el nuevo apellido: ");
-            break;
-        case 3:
-            list[i].salary=getFloat(0,INT_MAX,"Ingrese el nuevo salario: ");
-            break;
-        case 4:
-            list[i].sector=getInt(0,INT_MAX,"Ingrese el nuevo sector: ");
-            break;
-
+    case 1:
+        printf("Ingrese el nuevo nombre: ");
+        gets(array[i].name);
+        break;
+    case 2:
+        printf("Ingrese el nuevo apellido: ");
+        gets(array[i].lastName);
+        break;
+    case 3:
+        printf("Ingrese el nuevo salario: ");
+        scanf("%f",&auxFloat);
+        array[i].salary=auxFloat;
+        break;
+    case 4:
+        printf("Ingrese el nuevo sector: ");
+        scanf("%d",&auxInt);
+        array[i].sector=auxInt;
+        break;
+    default:
+        printf("opcion invalida, saliste.");
+        system("pause");
+        break;
+        }
+        return 0;
     }
-
-}
-
-int removeEmployee(eEmployee list[], int len)
-{
-    int i;
-    int id;
-
-    printfEmployees(list,len);
-
-    id=getInt(1000,2000,"\ningrese el INDICE que desea DAR DE BAJA: ");
-
-     while(findEmployeeById(list,len,id)==-1)
+    int printEmployees(eEmployee array[],int limite)
     {
-        id=getInt(1000,2000,"ERROR, Ingrese un INDICE valido: ");
-    }
-
-    i=findEmployeeById(list,len,id);
-
-    list[i].isEmpty=0;
-
-    return 0;
-
-}
-int sortEmployees(eEmployee list[], int len)
-{
-    int i;
-    int j;
-
-    eEmployee auxEmpleado;
-
-    for(i=0;i<len-1;i++)
-    {
-        for(j=i+1;j<len;j++)
+        int i;
+        for(i=0;i<limite;i++)
         {
-            if((stricmp(list[i].lastName,list[j].lastName)==1)||((list[i].sector>list[j].sector)))
+            if(array[i].isEmpty==1)
             {
-                auxEmpleado = list[i];
-                list[i] = list[j];
-                list[j] = auxEmpleado;
+                printf("ID: %d Nombre: %s Apellido: %s Salario: $%.2f Sector: %d\n",array[i].id,array[i].name,array[i].lastName,array[i].salary,array[i].sector);
             }
         }
+        return 0;
     }
+    int removeEmployee(eEmployee array[],int limite,int*aux)
+    {
+        int parametro =*aux;
+        int i;
+        for(i=0;i<limite;i++)
+        {
+            if(array[i].id==parametro)
+            {
+                array[i].isEmpty=-1;
+            }
+        }
+        return 0;
+    }
+int informeEmpoyee(eEmployee array[],int limite)
+{
+
+    int i;
+    int j;
+    int bufferId;
+    char bufferName[51];
+    char bufferLastName[51];
+    float bufferSalary;
+    int bufferSector;
+    int bufferIsEmpty;
+    int flag=0;
+
+    if(array!=NULL && limite>=0)
+    {
+        for (i = 1; i < limite; i++)
+        {
+            strcpy(bufferName,array[i].name);
+            strcpy(bufferLastName,array[i].lastName);
+            bufferId=array[i].id;
+            bufferSalary=array[i].salary;
+            bufferSector=array[i].sector;
+            bufferIsEmpty=array[i].isEmpty;
+
+
+
+
+            j = i - 1;
+            while ((j >= 0) && strcmp(bufferLastName,array[j].lastName)<0)
+            {
+
+
+                strcpy(array[j + 1].name,array[j].name);
+                strcpy(array[j + 1].lastName,array[j].lastName);
+                array[j + 1].id=array[j].id;
+                array[j + 1].isEmpty=array[j].isEmpty;
+                array[j + 1].salary=array[j].salary;
+                array[j + 1].sector=array[j].sector;
+                j--;
+            }
+            strcpy(array[j + 1].name,bufferName);
+            strcpy(array[j + 1].lastName,bufferLastName);
+            array[j + 1].id=bufferId;
+            array[j + 1].isEmpty=bufferIsEmpty;
+            array[j + 1].salary=bufferSalary;
+            array[j + 1].sector=bufferSector;
+
+           flag=1;
+        }
+    }
+    if(flag==0)
+    {
+        if(array!=NULL && limite>=0)
+    {
+        for (i = 1; i < limite; i++)
+        {
+            strcpy(bufferName,array[i].name);
+            strcpy(bufferLastName,array[i].lastName);
+            bufferId=array[i].id;
+            bufferSalary=array[i].salary;
+            bufferSector=array[i].sector;
+            bufferIsEmpty=array[i].isEmpty;
+
+
+
+
+            j = i - 1;
+            while ((j >= 0) && (bufferSector<=array[j].sector))
+            {
+
+
+                strcpy(array[j + 1].name,array[j].name);
+                strcpy(array[j + 1].lastName,array[j].lastName);
+                array[j + 1].id=array[j].id;
+                array[j + 1].isEmpty=array[j].isEmpty;
+                array[j + 1].salary=array[j].salary;
+                array[j + 1].sector=array[j].sector;
+                j--;
+            }
+            strcpy(array[j + 1].name,bufferName);
+            strcpy(array[j + 1].lastName,bufferLastName);
+            array[j + 1].id=bufferId;
+            array[j + 1].isEmpty=bufferIsEmpty;
+            array[j + 1].salary=bufferSalary;
+            array[j + 1].sector=bufferSector;
+
+           flag=1;
+        }
+    }
+
+}
+ return 0;
+}
+int promedioSalary(eEmployee array[],int limite)
+{
+    int i;
+    float acumulador = 0.00;
+    float promedio;
+    int interaciones=0;
+    int interacionesSupPromedio=0;
+        for(i=0;i<limite;i++)
+    {
+        if(array[i].isEmpty==1)
+            acumulador=acumulador+array[i].salary;
+            interaciones++;
+    }
+
+    promedio=acumulador/interaciones;
+
+    for(i=0;i<limite;i++)
+    {
+        if(array[i].salary>promedio)
+        {
+            interacionesSupPromedio++;
+        }
+    }
+    printf("El total de salario es: %.2f  El promedio de los salario es: %.2f  Los empleados que superan el promedio son %d \n" ,acumulador,promedio,interacionesSupPromedio);
     return 0;
 }
-void average_employees(eEmployee list[],int len)
+int esSoloLetras(char str[])
 {
-    float total=0;
-    float pSalary=0;
-    int superaPSalaty=0;
-    int contador=0;
-    int i;
-
-    for(i=0;i<len;i++)
+    int i=0;
+    while (str[i] != '\0')
     {
-        if(list[i].isEmpty==1)
-        {
-            total+=list[i].salary;
-            contador++;
-        }
+        if((str[i] != ' ') && (str[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+        return 0;
+        i++;
     }
-
-    pSalary=total/contador;
-
-    for(i=0;i<len;i++)
-    {
-        if(list[i].salary>pSalary)
-        {
-            superaPSalaty++;
-        }
-    }
-
-    printf("\n\nEl total de sueldos es: %.2f\nEl promedio de salarios es: %.2f\nLa cantidad de empleados que superar el promedio es: %d\n\n",total,pSalary,superaPSalaty);
+    return 1;
 }
+int esAlfaNumerico(char str[])
+{
+    int i=0;
+    while (str[i] != '\0')
+    {
+        if((str[i] != ' ') && (str[i] <  'a' || str [i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+        return 0;
+        i++;
+    }
+    return 1;
+}
+

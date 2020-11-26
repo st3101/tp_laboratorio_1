@@ -1,88 +1,91 @@
-
-///LEONARDI SANTIAGO TOMÁS- TRABAJO PRACTICO N°2-
-
-
 #include <stdio.h>
 #include <stdlib.h>
-#include "arrayEmployees.h"
-#include "biblioteca.h"
-#define NUMBER_EMPLOYEES 10
-
+#include "ArrayEmployees.h"
+#define CANTIDAD 2
 
 int main()
 {
-    eEmployee arrayEmployee[NUMBER_EMPLOYEES];
-    initEmployees(arrayEmployee,NUMBER_EMPLOYEES);
-
     int opcion;
-    int flag=0;
+    int flag=1;
+    int aux;
+    char continuar='s';
+
+    eEmployee listemployee[CANTIDAD];
+    initEmployees(listemployee,CANTIDAD);
 
     do
     {
-        opcion=menu();
+        printf(" 1)ALTA \n 2)MODIFICACION \n 3)BAJA \n 4)INFORMAR \n 5)SALIR \n \n OPCION: ");
+        scanf("%d",&opcion);
+        fflush(stdin);
 
         switch(opcion)
         {
-        case 1:
-            if(addEmployees(arrayEmployee,NUMBER_EMPLOYEES))
-            {
-                flag=1;
-            }
-            else
-            {
-                printf("\nNo hay mas espacio\n\n");
-            }
+            case 1:
+            printf("ENTRASTE A ALTA\n");
+            flag=addEmployees(listemployee,CANTIDAD);
 
             break;
         case 2:
-            if(flag==1)
+            if(flag==0)
             {
-                modifyEmployee(arrayEmployee,NUMBER_EMPLOYEES);
+                printf("ENTRASTE A MODIFICAR\n");
+                printEmployees(listemployee,CANTIDAD);
+                findEmployeeById(listemployee,CANTIDAD,&aux);
+                editEmplotee(listemployee,&aux);
             }
             else
             {
-                printf("\nNo se cargo ni un empleado empleados!\n\n");
+                printf("Error, Ingrese un empleado\n");
             }
+
+
             break;
         case 3:
-            if(flag==1)
-            {
-                removeEmployee(arrayEmployee,NUMBER_EMPLOYEES);
-            }
-            else
-            {
-                printf("\nNo se cargo ni un empleado empleados!\n\n");
-            }
+             if(flag==0)
+             {
+                 printf("ENTRASTE A BAJA\n");
+                printEmployees(listemployee,CANTIDAD);
+                findEmployeeById(listemployee,CANTIDAD,&aux);
+                removeEmployee(listemployee,CANTIDAD,&aux);
+             }
+             else
+             {
+                  printf("Error, Ingrese un empleado\n");
+             }
+
             break;
         case 4:
-            if(flag==1)
+            if(flag==0)
             {
-
-                sortEmployees(arrayEmployee,NUMBER_EMPLOYEES);
-                printfEmployees(arrayEmployee,NUMBER_EMPLOYEES);
-                average_employees(arrayEmployee,NUMBER_EMPLOYEES);
+                printf("ENTRASTE A INFORMAR\n");
+                informeEmpoyee(listemployee,CANTIDAD);
+                printEmployees(listemployee,CANTIDAD);
+                promedioSalary(listemployee,CANTIDAD);
             }
-
             else
             {
-                printf("\nNo se cargo ni un empleado empleados!\n\n");
-            }
-            break;
-        default:
-            printf("\nOpcion Invalida!\n\n");
+                printf("Error, Ingrese un empleado\n");
             }
 
+
+            break;
+        case 5:
+            printf("  -SALIENDO-\n");
+            continuar='n';
+
+            break;
+        default:
+            printf("ERROR, Ingrese un opcion valida\n");
+            break;
+        }
 
         system("pause");
         system("cls");
 
+    }while(continuar=='s');
 
 
-
-
-    }while(1==1);
-
-    return 0;
 }
 
 
